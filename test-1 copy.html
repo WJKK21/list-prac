@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+/* reset */
+* {margin:0px; padding:0px; box-sizing: border-box;}
+
+body {overflow-x: hidden;}
+
+ul {list-style-type: none;}
+
+#move-btn {transform: translate(-50%, 0);}
+
+#root > main > section ul li {
+width: 100%;
+
+;
+
+}
+#root > main > section:first-child {
+width:200px;
+height:450px;
+border: 1px solid black;
+}
+#root > main > section:last-child {
+width:200px;
+height:450px;
+border: 1px solid blue;
+}
+
+</style>
+</head>
+<body>
+
+  <aside id="move-btn">
+  <h1>move!</h1>
+  </aside>
+  
+    <div id="root">
+      <main>
+        
+      <section id="left-sect">
+      <ul>
+      <li>items-1</li>
+      <li>items-2</li>
+      <li>items-3</li>
+      <li>items-4</li>
+      <li>items-5</li>
+      </ul>
+      </section>
+
+      <section id="right-sect">
+      <ul></ul>
+      </section>
+      </main>
+    </div>
+
+    <script>
+      const movebtn = document.getElementById('move-btn')
+      const root = document.getElementById('root')
+
+      // movebtn
+      movebtn.style.width = '200px';
+      movebtn.style.height = '200px';
+      movebtn.style.backgroundColor = '#fff';
+      movebtn.style.borderRadius = '50%';
+      movebtn.style.position = 'fixed';
+      movebtn.style.bottom = '10px';
+      movebtn.style.left = '50vw'
+      
+      /* flex set */
+      movebtn.style.display = 'flex';
+      movebtn.style.justifyContent = 'center';
+      movebtn.style.alignItems = 'center';
+
+      //root
+      root.style.width = '100vw';
+      root.style.height = '100vh'
+      root.style.backgroundColor = 'cadetblue';
+      /* flex set */
+      root.style.display = 'flex';
+      root.style.justifyContent = 'center';
+      root.style.alignItems = 'center';
+
+      // main
+      root.children[0].style.width = '500px'
+      root.children[0].style.height = '500px'
+      root.children[0].style.border = '1px dotted black';
+      /* flex set */
+      root.children[0].style.display = 'flex'
+      root.children[0].style.justifyContent = 'center';
+      root.children[0].style.alignItems = 'center';
+
+      // section
+      root.children[0].children[0].style.display = 'flex';
+      root.children[0].children[0].style.justifyContent = 'center';
+      root.children[0].children[0].style.alignItems = 'center';
+
+      // ul li
+      root.children[0].children[0].children[0].children[0].style.width = '100%';
+      root.children[0].children[0].children[0].children[0].style.height = '50px';
+      root.children[0].children[0].children[0].style.backgroundColor = '#fff';
+      root.children[0].children[0].children[0].children[0,1,2,3,4].style.border = '1px solid black';
+      
+      root.children[0].children[1].style.display = 'flex';
+      root.children[0].children[1].style.justifyContent = 'center';
+      root.children[0].children[1].style.alignItems = 'center';
+
+
+      console.dir(root.children[0].children[0])
+
+    </script>
+</body>
+</html>

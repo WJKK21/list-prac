@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0;padding: 0; box-sizing: border-box;}
+    #popup {
+      width: 300px;
+      height: 300px;
+      background-color: tomato;
+      position: fixed;
+      top: 100px;
+      left: 100px;
+    }
+    #popup > button {
+      width: 100px;
+      height: 100px;
+      font-size: 20px;
+    }
+
+    #root {
+      width: 100vw;
+      height: 300vh;
+      background-color: #ccc;    
+      }
+
+      #root > section {
+        width: 100%;
+        height: 100vh;
+        border: 1px solid #000;
+
+      }
+      #root > section:nth-child(1){background-color:aliceblue}
+      #root > section:nth-child(2){background-color:blue}
+      #root > section:nth-child(3){background-color:red}
+
+  </style>
+</head>
+<body>
+
+  <aside id = "popup">
+    <button>close!</button>
+    <p> 공욱재</p>
+  </aside>
+
+  <div id="root">
+    <section></section>
+    <section></section>
+    <section></section>
+  </div>
+
+  <script>
+
+    const popUp = document.getElementById('popup')
+    const closeButton = popUp.children[0];
+    console.dir(popUp)
+    console.dir(closeButton)
+
+    closeButton.addEventListener ('click', function(){
+      closeButton.style.display = 'none'
+    })
+
+    closeButton.parentNode.addEventListener ('click', function(){
+      closeButton.parentNode.style.display = 'none'
+    })
+    // 부모를 찾아서 적용시킨다 
+
+    popUp.addEventListener ('click', function(){
+      popUp.style.display = 'none'
+        })
+    // 이렇게 해도 되지만 굳이 찾아보는 것 
+    
+    const root = document.getElementById('root')
+    pTag = document.createElement('p')
+    pTag.textContent = '공님'
+    root.children[0].appendChild(pTag)
+
+    //function document.createElement(p){root.children[0]}
+    console.log(root)
+
+        let re = function (){
+      location.reload(true);
+  }
+
+
+    root.children[2].appendChild(re)
+
+  </script>
+  
+</body>
+</html>
