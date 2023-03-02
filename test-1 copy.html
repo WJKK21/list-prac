@@ -9,59 +9,77 @@
 /* reset */
 * {margin:0px; padding:0px; box-sizing: border-box;}
 
-body {overflow-x: hidden;}
-
-ul {list-style-type: none;}
-
 #move-btn {transform: translate(-50%, 0);}
 
-#root > main > section ul li {
-width: 100%;
-
-;
-
-}
-#root > main > section:first-child {
-width:200px;
-height:450px;
-border: 1px solid black;
-}
-#root > main > section:last-child {
-width:200px;
-height:450px;
-border: 1px solid blue;
-}
-
 </style>
+
 </head>
+
 <body>
 
-  <aside id="move-btn">
-  <h1>move!</h1>
-  </aside>
-  
-    <div id="root">
-      <main>
-        
-      <section id="left-sect">
-      <ul>
-      <li>items-1</li>
-      <li>items-2</li>
-      <li>items-3</li>
-      <li>items-4</li>
-      <li>items-5</li>
-      </ul>
-      </section>
+      <script>
+      const mbody = document.querySelector('body')
+      mbody.style.overflowX = 'hidden';
 
-      <section id="right-sect">
-      <ul></ul>
-      </section>
-      </main>
-    </div>
+      const aside = document.createElement('aside');
+      aside.id  = 'move-btn';
+      document.body.appendChild(aside);
+      
+      const h1 = document.createElement('h1')
+      let newContent = document.createTextNode("move!");
+      document.body.children[1].appendChild(h1);
+      h1.appendChild(newContent);
 
-    <script>
+      const div = document.createElement('div')
+      div.id  = 'root';
+      document.body.appendChild(div);
+      
+      const main = document.createElement('main')
+      document.body.children[2].appendChild(main);
+      
+      const sectionleft = document.createElement('section')
+      sectionleft.id  = 'left-sect';
+      document.body.children[2].children[0].appendChild(sectionleft);
+
+      const ul = document.createElement('ul')
+      document.body.children[2].children[0].children[0].appendChild(ul);
+
+      const li1 = document.createElement('li')
+      let items1 = document.createTextNode("items-1");
+      document.body.children[2].children[0].children[0].children[0].appendChild(li1);
+      li1.appendChild(items1);
+
+      const li2 = document.createElement('li')
+      let items2 = document.createTextNode("items-2");
+      document.body.children[2].children[0].children[0].children[0].appendChild(li2);
+      li2.appendChild(items2);
+
+      const li3 = document.createElement('li')
+      let items3 = document.createTextNode("items-3");
+      document.body.children[2].children[0].children[0].children[0].appendChild(li3);
+      li3.appendChild(items3);
+
+      const li4 = document.createElement('li')
+      let items4 = document.createTextNode("items-4");
+      document.body.children[2].children[0].children[0].children[0].appendChild(li4);
+      li4.appendChild(items4);
+      
+      const li5 = document.createElement('li')
+      let items5 = document.createTextNode("items-5");
+      document.body.children[2].children[0].children[0].children[0].appendChild(li5);
+      li5.appendChild(items5);
+      
+
+      const sectionright = document.createElement('section')
+      sectionright.id  = 'right-sect';
+      document.body.children[2].children[0].appendChild(sectionright);
+      const ul2 = document.createElement('ul')
+      document.body.children[2].children[0].children[1].appendChild(ul2);
+
       const movebtn = document.getElementById('move-btn')
       const root = document.getElementById('root')
+      const leftsect = document.getElementById('left-sect')
+      const rightsect = document.getElementById('right-sect')
 
       // movebtn
       movebtn.style.width = '200px';
@@ -95,23 +113,56 @@ border: 1px solid blue;
       root.children[0].style.justifyContent = 'center';
       root.children[0].style.alignItems = 'center';
 
-      // section
-      root.children[0].children[0].style.display = 'flex';
-      root.children[0].children[0].style.justifyContent = 'center';
-      root.children[0].children[0].style.alignItems = 'center';
+      // leftsect
+      leftsect.style.display = 'flex';
+      leftsect.style.justifyContent = 'center';
+      leftsect.style.alignItems = 'center';
+      leftsect.style.width = '200px';
+      leftsect.style.height = '450px';
+      leftsect.style.border = ' 1px solid black';
 
-      // ul li
-      root.children[0].children[0].children[0].children[0].style.width = '100%';
-      root.children[0].children[0].children[0].children[0].style.height = '50px';
-      root.children[0].children[0].children[0].style.backgroundColor = '#fff';
-      root.children[0].children[0].children[0].children[0,1,2,3,4].style.border = '1px solid black';
+
+      // leftsect > ul 
+
+      leftsect.children[0].style.listStyleType = 'none';
+
+        // ul > li
+      leftsect.children[0].children[0].style.width = '100%';
+      leftsect.children[0].children[0].style.height = '50px';
+      leftsect.children[0].children[0].style.backgroundColor = '#fff';
+      leftsect.children[0].children[0].style.border = '1px solid black';
+
+      leftsect.children[0].children[1].style.width = '100%';
+      leftsect.children[0].children[1].style.height = '50px';
+      leftsect.children[0].children[1].style.backgroundColor = '#fff';
+      leftsect.children[0].children[1].style.border = '1px solid black';
+
+      leftsect.children[0].children[2].style.width = '100%';
+      leftsect.children[0].children[2].style.height = '50px';
+      leftsect.children[0].children[2].style.backgroundColor = '#fff';
+      leftsect.children[0].children[2].style.border = '1px solid black';
+
+      leftsect.children[0].children[3].style.width = '100%';
+      leftsect.children[0].children[3].style.height = '50px';
+      leftsect.children[0].children[3].style.backgroundColor = '#fff';
+      leftsect.children[0].children[3].style.border = '1px solid black';
+
+      leftsect.children[0].children[4].style.width = '100%';
+      leftsect.children[0].children[4].style.height = '50px';
+      leftsect.children[0].children[4].style.backgroundColor = '#fff';
+      leftsect.children[0].children[4].style.border = '1px solid black';
       
-      root.children[0].children[1].style.display = 'flex';
-      root.children[0].children[1].style.justifyContent = 'center';
-      root.children[0].children[1].style.alignItems = 'center';
+      // rightsect
+      rightsect.style.display = 'flex';
+      rightsect.style.justifyContent = 'center';
+      rightsect.style.alignItems = 'center';
+      rightsect.style.width = '200px';
+      rightsect.style.height = '450px';
+      rightsect.style.border = ' 1px solid blue';
 
 
-      console.dir(root.children[0].children[0])
+      console.dir(root.children[0].children[0].children[0].children[0])
+
 
     </script>
 </body>
