@@ -6,10 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
 <style>
-/* reset */
+/* 1. js에서 전체 선택자를 찾기 실패했습니다 
+2. aside를 중간으로 정렬하지 못했습니다 
+3. body에 overflow-x: hidden; 값이 박스에서 element의 위치를 조절 하는 것은 알겠는데 예제로 나온 페이지에서 어떤 작용을 하는지 못찾았습니다 
+4. 함수와 반복문을 적용시키지 못했습니다 
+5. transform: translate(-50%, 0); js에서 적용시키지 못했습니다 */
 * {margin:0px; padding:0px; box-sizing: border-box;}
-
-#move-btn {transform: translate(-50%, 0);}
+aside{transform: translate(-50%, 0);}
 
 </style>
 
@@ -18,8 +21,6 @@
 <body>
 
       <script>
-      const mbody = document.querySelector('body')
-      mbody.style.overflowX = 'hidden';
 
       const aside = document.createElement('aside');
       aside.id  = 'move-btn';
@@ -121,9 +122,7 @@
       leftsect.style.height = '450px';
       leftsect.style.border = ' 1px solid black';
 
-
       // leftsect > ul 
-
       leftsect.children[0].style.listStyleType = 'none';
 
         // ul > li
@@ -151,7 +150,7 @@
       leftsect.children[0].children[4].style.height = '50px';
       leftsect.children[0].children[4].style.backgroundColor = '#fff';
       leftsect.children[0].children[4].style.border = '1px solid black';
-      
+
       // rightsect
       rightsect.style.display = 'flex';
       rightsect.style.justifyContent = 'center';
@@ -160,9 +159,7 @@
       rightsect.style.height = '450px';
       rightsect.style.border = ' 1px solid blue';
 
-
-      console.dir(root.children[0].children[0].children[0].children[0])
-
+      console.dir(window)
 
     </script>
 </body>
